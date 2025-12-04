@@ -32,7 +32,7 @@ jobs:
         run: npm run pr:test
 
       - name: Test Report
-        uses: dorny/test-reporter@a923ed8851f90a1509b334ca82bd1c5c13a02bb2 # v1
+        uses: dorny/test-reporter@ee446707ff3bdadb3c039ff1af4286a09acb79c6 # v1
         if: success() || failure() # run this step even if previous step failed
         with:
           name: JEST Tests # Name of the check run which will be created
