@@ -1,0 +1,44 @@
+name: Release
+concurrency: main
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+
+jobs:
+  release:
+    permissions:
+      contents: write # for changesets/action to push to the repo
+      pull-requests: write # for changesets/action to create PRs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+        with:
+          # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+      - name: Setup 🔨
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: 18.10.0
+          registry-url: https://npm.pkg.github.com/
+      - name: Install
+        run: |
+          npm ci
+          git config --global user.name "GitHub CD bot"
+          git config --global user.email "github-cd-bot@github.com"
+      - name: Build
+        run: |
+          npm run build --if-present
+      - name: PR and/or Publish
+        id: changesets
+        uses: changesets/action@aba318e9165b45b7948c60273e0b72fce0a64eb9 # v1.4.7
+        with:
+          publish: |
+            npx changeset publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

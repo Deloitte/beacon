@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic" />
+  </head>
+
+  <body>
+    <h3>This is an example web page</h3>
+    <!-- Web Page -->
+
+    <!-- End of the body -->
+    <script type="text/javascript">
+      var config = {
+        send: true,
+        log: true,
+        apiRoot: 'http://localhost',
+        trackers: [{ name: 'page' }],
+      };
+    </script>
+
+    <script type="text/javascript">
+      (function () {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '../beacon.js';
+        script.onload = function () {
+          window.beacon.init(config);
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+  </body>
+</html>

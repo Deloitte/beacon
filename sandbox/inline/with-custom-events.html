@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ArticlePage</title>
+    <meta name="entity" content="Article" />
+    <meta name="entity-id" content="12345" />
+    <meta name="entity-props-name" content="My Article" />
+    <link rel="stylesheet" href="../pico.min.css" />
+    <script type="text/javascript" src="../log2screen.js" ></script>
+    <script
+      type="text/javascript"
+      id="beaconScript"
+      async
+      src="../beacon.js"
+      data-api-root="http://localhost"
+      data-trackers="page,click,form"
+      data-identity="userAndSession"
+    ></script>
+  </head>
+
+  <!-- data-api-root="http://localhost" -->
+
+  <body>
+    <main class="container">
+      
+      <nav>
+        <ul>
+          <li><strong><a href="../index.html">Beacon Sandbox</a></strong></li>
+        </ul>
+        <ul>
+          <li><a href="../index.html"><small>Back To Examples</small></a></li>
+        </ul>
+      </nav>
+
+      <div class="grid">
+        <article>
+          <h4>Inline installation and configured trackers and identity</h4>
+          <small>
+            This page shows an example of an <strong>Article</strong> page that has custom tagging on the HTML metadata to enhance page tracking as well as dataset attributes on elements to support click tracking.
+
+            <strong>Page Tracking</strong>
+
+            <pre>
+              <code style="padding: 0px;">
+&lt;meta name="entity" content="Article" /&gt; <!-- The name of the entity -->
+&lt;meta name="entity-id" content="12345" /&gt; <!-- The ID of the entity -->
+&lt;meta name="entity-props-name" content="My Article" /&gt; <!-- Any additional properties, in this case "name" to be used for reporting -->
+              </code>
+            </pre>
+
+            <strong>Click Tracking</strong>
+
+<pre><code style="padding: 0px;">
+  // This will send a `ClickedGoogleLink` event
+  &lt;a href="#" data-event="ClickedGoogleLink" data-entity="Article" data-entity-id="12345"&gt;Link To Google&lt;/a&gt;
+</code></pre>
+
+Or for passing more complex information, you can use the following: 
+<pre><code style="padding: 0px;">
+  // This will send a `ArticleLiked` event with the entity `Article` and the entity id `12345`
+  &lt;button id="likeArticle" data-event="ArticleLiked" data-entity="Article" data-entity-id="12345"&gt;Test Button (to trigger Article Liked event)&lt;/button&gt;
+</code></pre>
+          </small>
+        </article>
+      </div>
+
+
+      <div class="grid">
+        <div>
+          <!-- Web Page -->
+
+          <article>
+            <h4>Click Tracker</h4>
+            <a href="#" data-event="ClickedGoogleLink">Link To Google</a>
+            <button id="likeArticle" data-event="ArticleLiked" data-entity="Article" data-entity-id="12345">Test Button (to trigger Article Liked event)</button>
+          </article>
+        </div>
+        <div>
+          <small>
+            <ul id="log2Screen-log"></ul>
+          </small>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+name: Main Test
+on:
+  push:
+    branches:
+      - main
+permissions:
+  id-token: write
+  contents: write
+  checks: write
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: Setup node
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: 18.10.0
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run Tests
+        run: npm run test
+
+      # DISABLING ONLY UNTIL WE ARE PUBLIC
+      # - name: ⚙️ Generating coverage badges
+      #   uses: jpb06/coverage-badges-action@latest
+      #   with:
+      #     branches: main
+      #     badges-icon: jest
+      #     output-folder: ./.badges

@@ -1,0 +1,41 @@
+name: Compile
+concurrency: compile
+on:
+  push:
+    branches: ['main']
+permissions:
+  contents: write
+
+jobs:
+  release:
+    permissions:
+      contents: write # for changesets/action to push to the repo
+      pull-requests: write # for changesets/action to create PRs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+        with:
+          # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+      - name: Setup 🔨
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: 18.10.0
+          registry-url: https://npm.pkg.github.com/
+      - name: Get Package Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+      - name: Install
+        run: |
+          npm ci
+          git config --global user.name "GitHub CD bot"
+          git config --global user.email "github-cd-bot@github.com"
+      - name: Add compiled files
+        run: |
+          npm run build
+          git add .
+          git commit -m 'Adding versioned compiled assets'
+          git push
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

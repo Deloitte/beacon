@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="../pico.min.css" />
+    <script type="text/javascript" src="../log2screen.js" ></script>
+    <script
+      type="text/javascript"
+      id="beaconScript"
+      async
+      src="../beacon.js"
+      data-api-root="http://localhost"
+    ></script>
+  </head>
+
+  <body>
+    <main class="container">
+      
+      <nav>
+        <ul>
+          <li><strong><a href="../index.html">Beacon Sandbox</a></strong></li>
+        </ul>
+        <ul>
+          <li><a href="../index.html"><small>Back To Examples</small></a></li>
+        </ul>
+      </nav>
+
+      <div class="grid">
+        <article>
+          <h4>Most Simple Example Ever</h4>
+          <small>This page is configured with the easiest installation method. It will default using the  <strong>identity</strong>: noPii and <strong>trackers</strong>: page, but you can also still call custom tags as needed. <br /> You can install this example, just by adding this onto your web page</small>
+          <pre><code>
+&lt;script type="text/javascript" 
+id="beaconScript"
+async 
+src="beacon.js"
+data-api-root="http://localhost"
+&gt;&lt;/script&gt;
+          </code></pre>
+        </article>
+      </div>
+
+
+      <div class="grid">
+        <div>
+          <!-- Web Page -->
+          
+          <article>
+            <h4>Custom Events</h4>
+            <div onclick="window.beacon.track('event', 'test')">Click here for a generic `test` event</div>
+          </article>
+        </div>
+        <div>
+          <small>
+            <ul id="log2Screen-log"></ul>
+          </small>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
