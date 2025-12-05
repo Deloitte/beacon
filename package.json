@@ -24,7 +24,7 @@
     "@changesets/cli": "^2.27.1",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "0.4.4",
     "@types/jest": "^30.0.0",
     "@types/jsdom": "^27.0.0",
