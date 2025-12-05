@@ -1,5 +1,5 @@
 ---
-'Deloitte/beacon-oss': patch
+'Deloitte/beacon': patch
 ---
 
 Updating packaging and dependencies
