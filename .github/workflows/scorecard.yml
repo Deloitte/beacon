@@ -26,9 +26,14 @@ jobs:
       security-events: write
       # Needed to publish results and get a badge (see publish_results below).
       id-token: write
-      # Uncomment the permissions below if installing in a private repository.
+      # Recommended additional permissions for private repositories running Scorecard.
+      # AI Generated Code by Deloitte + Cursor (BEGIN)
       contents: read
       actions: read
+      issues: read
+      pull-requests: read
+      checks: read
+      # AI Generated Code by Deloitte + Cursor (END)
 
     steps:
       - name: 'Checkout code'
@@ -46,7 +51,7 @@ jobs:
           # - you are installing Scorecard on a *private* repository
           # To create the PAT, follow the steps in https://github.com/ossf/scorecard-action#authentication-with-pat.
           # AI Generated Code by Deloitte + Cursor (BEGIN)
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.SCORECARD_TOKEN }}
           # AI Generated Code by Deloitte + Cursor (END)
           # Public repositories:
           #   - Publish results to OpenSSF REST API for easy access by consumers
