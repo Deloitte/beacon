@@ -1,5 +1,5 @@
 {
-  "name": "Deloitte/beacon-oss",
+  "name": "Deloitte/beacon",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
