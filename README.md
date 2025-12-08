@@ -13,4 +13,3 @@ Modern packaging to support the foundation of first-party web analytics
 ## Contributing to the beacon
 
 If you'd like to contribute, please read our guide to [contributing](./CONTRIBUTING.md)
-
