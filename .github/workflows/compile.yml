@@ -10,7 +10,6 @@ jobs:
   release:
     permissions:
       contents: write # for changesets/action to push to the repo
-      pull-requests: write # for changesets/action to create PRs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
