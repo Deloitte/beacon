@@ -14,7 +14,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: jwalton/gh-find-current-pr@v1
+      - uses: jwalton/gh-find-current-pr@89ee5799558265a1e0e31fab792ebb4ee91c016b
         id: findPr
 
       - name: Setup node
@@ -40,7 +40,7 @@ jobs:
           reporter: jest-junit # Format of test results
 
       - name: Publish Coverage Report
-        uses: ArtiomTr/jest-coverage-report-action@v2
+        uses: ArtiomTr/jest-coverage-report-action@82bc34a0347019ba8f6d2808cd96cec42ef9620e
         id: coverage
         with:
           working-directory: ./
@@ -50,7 +50,7 @@ jobs:
           prnumber: ${{ steps.findPr.outputs.number }}
 
       - name: Pull Request Comment
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@5060d4700a91de252c87eeddd2da026382d9298a
         with:
           # pass output from the previous step by id.
           message: ${{ steps.coverage.outputs.report }}

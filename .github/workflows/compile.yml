@@ -25,7 +25,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - name: Get Package Version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
+        uses: martinbeentjes/npm-get-version-action@3cf273023a0dda27efcd3164bdfb51908dd46a5b
       - name: Install
         run: |
           npm ci
