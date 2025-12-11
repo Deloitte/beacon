@@ -40,3 +40,6 @@ npm-debug.log
 packages/*/lib
 .idea
 /artifacts/
+
+# compiled files
+compiled/
