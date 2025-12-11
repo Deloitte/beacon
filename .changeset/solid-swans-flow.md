@@ -1,5 +1,5 @@
 ---
-'Deloitte/beacon': patch
+'@Deloitte/beacon': patch
 ---
 
 Updating README and packaging
