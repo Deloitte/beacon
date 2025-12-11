@@ -1,10 +1,10 @@
 {
-  "name": "Deloitte/beacon",
+  "name": "@Deloitte/beacon",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "version": "0.1.1",
-  "private": "true",
+  "private": false,
   "main": "dist/module.js",
   "module": "dist/module.esm.js",
   "browser": "dist/module.js",
