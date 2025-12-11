@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": "true",
   "main": "dist/module.js",
   "module": "dist/module.esm.js",
@@ -55,7 +55,7 @@
     "typescript": "^5.4.5",
     "uglify-js": "^3.17.4",
     "unique-color": "^0.1.0",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.2",
     "undici-types": "^7.16.0"
   },
   "files": [
