@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write # for changesets/action to push to the repo
       pull-requests: write # for changesets/action to create PRs
+      packages: write # for publishing to GitHub Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -24,6 +25,7 @@ jobs:
         with:
           node-version: '20.14.0'
           registry-url: https://npm.pkg.github.com/
+          scope: '@Deloitte'
       - name: Install
         run: |
           npm ci
