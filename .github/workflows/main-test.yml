@@ -67,13 +67,14 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git fetch origin badges || true
+          git reset --hard HEAD
+          git clean -fd
           if git ls-remote --heads origin badges | grep -q badges; then
-            git checkout -b badges origin/badges
+            git checkout badges || git checkout -b badges origin/badges
             git reset --hard origin/badges
           else
             git checkout --orphan badges
           fi
-          git rm -rf . 2>/dev/null || true
           mkdir -p coverage .badges
           cp /tmp/coverage-badges/coverage-summary.json coverage/
           cp /tmp/coverage-badges/.badges/* .badges/
