@@ -1,5 +1,23 @@
 # Deloitte/beacon
 
+## 0.1.6
+
+### Patch Changes
+
+- [#44](https://github.com/Deloitte/beacon/pull/44) [`5cd1591`](https://github.com/Deloitte/beacon/commit/5cd15911abc8e45020f6033bc080fa2525780ca3) Thanks [@tjuravich](https://github.com/tjuravich)! - Remove beacon.js tagging on release for now
+
+## 0.1.5
+
+### Patch Changes
+
+- [#42](https://github.com/Deloitte/beacon/pull/42) [`f924f24`](https://github.com/Deloitte/beacon/commit/f924f24b7fd2ea2e0048e97e57d2dd1a97251e41) Thanks [@tjuravich](https://github.com/tjuravich)! - Resolving sandbox example to show logging
+
+## 0.1.4
+
+### Patch Changes
+
+- [#36](https://github.com/Deloitte/beacon/pull/36) [`5230a90`](https://github.com/Deloitte/beacon/commit/5230a9025088aebcac0184475555e89cc767ca99) Thanks [@tjuravich](https://github.com/tjuravich)! - Attempting to resolve the packaging of the dist/beacon.js file
+
 ## 0.1.3
 
 ### Patch Changes
