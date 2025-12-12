@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.6
+
+### Patch Changes
+
+- [#44](https://github.com/Deloitte/beacon/pull/44) [`5cd1591`](https://github.com/Deloitte/beacon/commit/5cd15911abc8e45020f6033bc080fa2525780ca3) Thanks [@tjuravich](https://github.com/tjuravich)! - Remove beacon.js tagging on release for now
+
 ## 0.1.5
 
 ### Patch Changes
