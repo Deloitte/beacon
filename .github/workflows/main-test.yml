@@ -67,7 +67,12 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git fetch origin badges || true
-          git checkout -b badges origin/badges 2>/dev/null || git checkout --orphan badges
+          if git ls-remote --heads origin badges | grep -q badges; then
+            git checkout -b badges origin/badges
+            git reset --hard origin/badges
+          else
+            git checkout --orphan badges
+          fi
           git rm -rf . 2>/dev/null || true
           mkdir -p coverage .badges
           cp /tmp/coverage-badges/coverage-summary.json coverage/
@@ -75,5 +80,5 @@ jobs:
           git add coverage/coverage-summary.json .badges/*.json
           if ! git diff --staged --quiet; then
             git commit -m "chore: update coverage data [skip ci]"
-            git push origin badges
+            git push --force-with-lease origin badges
           fi
