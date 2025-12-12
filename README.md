@@ -1,8 +1,15 @@
-<a id="top"></a>
 
 <h1 align="center">
 Beacon
 </h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-lines.json" alt="coverage lines" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-functions.json" alt="coverage functions" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-statements.json" alt="coverage statements" />
+</p>
 
 <p align="center">
 Modern packaging to support the foundation for first-party web analytics
@@ -23,15 +30,13 @@ In a nutshell, this library provides a modern foundation to create a custom and 
 
 ![Overview](./docs/img/overview.png)
 
-This repository creates a single minified javascript file called `beacon.js`. You can always find the latest file in the [`compiled`](https://github.com/Deloitte/beacon/tree/main/compiled) folder, as well as previously released versions.
-
-This file is meant that can be placed onto any web page to collect analytics in a highly configurable and transparent way.
+This repository creates a single minified javascript file called `beacon.js` which you can install into an experience to see what analytics are tracked. You can always find the latest file in the [`GitHub Releases`](https://github.com/Deloitte/beacon/releases) folder, as well as previously released versions.
 
 <a id="play"></a>
 
 ## Play with the beacon
 
-If you want to skip ahead and play with it for the simplest web page as an example. Go [here](https://verbose-dollop-l16zl4e.pages.github.io/inline/most-simple.html) to see the `sandbox/inline/most-simple.html` example. Once on this page, you will see logs show up on your screen. You can click on each of the activities to see the detailed logs. As you load the page and interact with you, you will see all of the events that the beacon collects.
+If you want to skip ahead and play with it for the simplest web page as an example. Go [here](https://deloitte.github.io/beacon/inline/most-simple.html) to see the `sandbox/inline/most-simple.html` example. Once on this page, you will see logs show up on your screen. You can click on each of the activities to see the detailed logs. As you load the page and interact with you, you will see all of the events that the beacon collects.
 
 ![Overview](./docs/img/sandbox.png)
 
@@ -47,7 +52,7 @@ For those that would like to take the compiled beacon and apply it to your web e
 
 ### Installation script
 
-> For many examples on how to install the script, including a more complex installation snippet, check out the [detailed playground that shows the installation along with live logs to see how it all works](https://verbose-dollop-l16zl4e.pages.github.io/index.html)
+> For many examples on how to install the script, including a more complex installation snippet, check out the [detailed playground that shows the installation along with live logs to see how it all works](https://deloitte.github.io/beacon/index.html)
 
 The simplest way to install the beacon is to use an **inline installation script**. This allows you to place a singular javascript file on your page and it'll take care of the rest.
 
