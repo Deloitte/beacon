@@ -21,16 +21,6 @@ export default {
     },
     {
       // Minified file for actual usage
-      file: `compiled/beacon.js`,
-      format: 'iife',
-    },
-    {
-      // Minified file for actual usage
-      file: `compiled/beacon-${pkg.version}.js`,
-      format: 'iife',
-    },
-    {
-      // Minified file for actual usage
       file: `sandbox/beacon.js`,
       format: 'iife',
     },

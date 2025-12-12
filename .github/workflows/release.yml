@@ -47,11 +47,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload dist/beacon.js asset
         if: steps.changesets.outputs.published == 'true'
-        uses: actions/upload-release-asset@v1
+        run: |
+          if [ ! -f ./dist/beacon.js ]; then
+            echo "Error: dist/beacon.js not found. Build may have failed."
+            exit 1
+          fi
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Uploading dist/beacon.js to release $TAG"
+          gh release upload "$TAG" ./dist/beacon.js --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.changesets.outputs.upload_url }}
-          asset_path: ./dist/beacon.js
-          asset_name: beacon.js
-          asset_content_type: application/javascript
