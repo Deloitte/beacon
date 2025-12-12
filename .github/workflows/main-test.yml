@@ -28,10 +28,52 @@ jobs:
       - name: Run Tests
         run: npm run test
 
-      # DISABLING ONLY UNTIL WE ARE PUBLIC
-      # - name: ⚙️ Generating coverage badges
-      #   uses: jpb06/coverage-badges-action@latest
-      #   with:
-      #     branches: main
-      #     badges-icon: jest
-      #     output-folder: ./.badges
+      - name: Generate coverage endpoint files
+        run: |
+          mkdir -p .badges
+          node -e "
+          const fs = require('fs');
+          const coverage = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+          const total = coverage.total;
+          
+          function getColor(pct) {
+            if (pct >= 80) return 'brightgreen';
+            if (pct >= 60) return 'green';
+            if (pct >= 40) return 'yellowgreen';
+            if (pct >= 20) return 'yellow';
+            return 'red';
+          }
+          
+          function createEndpoint(label, pct) {
+            return {
+              schemaVersion: 1,
+              label: label,
+              message: pct.toFixed(2) + '%',
+              color: getColor(pct)
+            };
+          }
+          
+          fs.writeFileSync('.badges/coverage-lines.json', JSON.stringify(createEndpoint('coverage lines', total.lines.pct)));
+          fs.writeFileSync('.badges/coverage-functions.json', JSON.stringify(createEndpoint('coverage functions', total.functions.pct)));
+          fs.writeFileSync('.badges/coverage-statements.json', JSON.stringify(createEndpoint('coverage statements', total.statements.pct)));
+          fs.writeFileSync('.badges/coverage-total.json', JSON.stringify(createEndpoint('coverage', total.lines.pct)));
+          "
+
+      - name: Commit coverage files to badges branch
+        run: |
+          mkdir -p /tmp/coverage-badges
+          cp coverage/coverage-summary.json /tmp/coverage-badges/
+          cp -r .badges /tmp/coverage-badges/
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git fetch origin badges || true
+          git checkout -b badges origin/badges 2>/dev/null || git checkout --orphan badges
+          git rm -rf . 2>/dev/null || true
+          mkdir -p coverage .badges
+          cp /tmp/coverage-badges/coverage-summary.json coverage/
+          cp /tmp/coverage-badges/.badges/* .badges/
+          git add coverage/coverage-summary.json .badges/*.json
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update coverage data [skip ci]"
+            git push origin badges
+          fi

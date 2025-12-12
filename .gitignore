@@ -10,6 +10,7 @@ junit.xml
 
 # testing
 /coverage
+!/coverage/coverage-summary.json
 
 # next.js
 **/.next/
