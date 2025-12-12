@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.5
+
+### Patch Changes
+
+- [#42](https://github.com/Deloitte/beacon/pull/42) [`f924f24`](https://github.com/Deloitte/beacon/commit/f924f24b7fd2ea2e0048e97e57d2dd1a97251e41) Thanks [@tjuravich](https://github.com/tjuravich)! - Resolving sandbox example to show logging
+
 ## 0.1.4
 
 ### Patch Changes
