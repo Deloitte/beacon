@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "main": "dist/module.js",
   "module": "dist/module.esm.js",

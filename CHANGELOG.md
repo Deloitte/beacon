@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.4
+
+### Patch Changes
+
+- [#36](https://github.com/Deloitte/beacon/pull/36) [`5230a90`](https://github.com/Deloitte/beacon/commit/5230a9025088aebcac0184475555e89cc767ca99) Thanks [@tjuravich](https://github.com/tjuravich)! - Attempting to resolve the packaging of the dist/beacon.js file
+
 ## 0.1.3
 
 ### Patch Changes
