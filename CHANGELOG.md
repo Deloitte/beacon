@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.3
+
+### Patch Changes
+
+- [#34](https://github.com/Deloitte/beacon/pull/34) [`87e4435`](https://github.com/Deloitte/beacon/commit/87e44356eacc476588dff9ab9a7a6483d3f42b1a) Thanks [@tjuravich](https://github.com/tjuravich)! - Updating packaging logic to include compiled beacon.js and updating README with badges now that we are public
+
 ## 0.1.2
 
 ### Patch Changes
