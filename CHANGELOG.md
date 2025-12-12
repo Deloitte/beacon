@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.7
+
+### Patch Changes
+
+- [#46](https://github.com/Deloitte/beacon/pull/46) [`d4424d9`](https://github.com/Deloitte/beacon/commit/d4424d9201c1006d1943a75b0752e336bb38e3a5) Thanks [@tjuravich](https://github.com/tjuravich)! - Updating publishing to use the sandbox local beacon.js and publish it in GHP
+
 ## 0.1.6
 
 ### Patch Changes
