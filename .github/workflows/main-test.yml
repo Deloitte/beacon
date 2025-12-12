@@ -69,11 +69,12 @@ jobs:
           git fetch origin badges || true
           git reset --hard HEAD
           git clean -fd
+          rm -rf .badges
           if git ls-remote --heads origin badges | grep -q badges; then
-            git checkout badges || git checkout -b badges origin/badges
+            git checkout -f badges 2>/dev/null || git checkout -f -b badges origin/badges
             git reset --hard origin/badges
           else
-            git checkout --orphan badges
+            git checkout -f --orphan badges
           fi
           mkdir -p coverage .badges
           cp /tmp/coverage-badges/coverage-summary.json coverage/
