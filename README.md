@@ -4,14 +4,6 @@ Beacon
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-lines.json" alt="coverage lines" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-functions.json" alt="coverage functions" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-statements.json" alt="coverage statements" />
-</p>
-
-<p align="center">
 Modern packaging to support the foundation for first-party web analytics
 <p>
 
@@ -20,6 +12,14 @@ Modern packaging to support the foundation for first-party web analytics
   <a href="#play">Play with the Beacon</a> •
   <a href="#install">Install the Beacon</a> •
   <a href="#contribute">Contribute</a> 
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-lines.json" alt="coverage lines" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-functions.json" alt="coverage functions" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-statements.json" alt="coverage statements" />
 </p>
 
 <a id="overview"></a>
