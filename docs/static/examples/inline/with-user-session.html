@@ -12,42 +12,12 @@
       data-log="true"
       data-api-root="http://localhost"
       data-trackers="page,click,form"
-      data-identity="user"
+      data-identity="userAndSession"
     ></script>
   </head>
 
-  <!-- data-api-root="http://localhost" -->
-
   <body>
     <main class="container">
-      
-      <nav>
-        <ul>
-          <li><strong><a href="../index.html">Beacon</a></strong></li>
-        </ul>
-        <ul>
-          <li><a href="../index.html"><small>Back To Examples</small></a></li>
-        </ul>
-      </nav>
-
-      <div class="grid">
-        <article>
-          <h4>Inline installation and configured trackers and identity</h4>
-          <small>This page is configured with the easiest installation method, while also letting trackers and identity options to be set  <strong>identity</strong>: session and <strong>trackers</strong>: page, click, and form. <br /> You can install this example, just by adding this onto your web page</small>
-          <pre><code>
-&lt;script type="text/javascript" 
-id="beaconScript"
-async 
-src="beacon.js"
-data-api-root="http://localhost"
-data-trackers="page,click,form"
-data-identity="user"
-&gt;&lt;/script&gt;
-          </code></pre>
-        </article>
-      </div>
-
-
       <div class="grid">
         <div>
           <!-- Web Page -->
@@ -98,6 +68,6 @@ data-identity="user"
           </small>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

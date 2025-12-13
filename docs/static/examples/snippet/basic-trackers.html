@@ -4,55 +4,15 @@
     <title>Sandbox</title>
     <link rel="stylesheet" href="../pico.min.css" />
     <script type="text/javascript" src="../log2screen.js" ></script>
-    <script
-      type="text/javascript"
-      id="beaconScript"
-      async
-      src="../beacon.js"
-      data-log="true"
-      data-api-root="http://localhost"
-      data-trackers="page,click,form"
-      data-identity="userAndSession"
-    ></script>
   </head>
 
   <body>
     <main class="container">
-      
-      <nav>
-        <ul>
-          <li><strong><a href="../index.html">Beacon</a></strong></li>
-        </ul>
-        <ul>
-          <li><a href="../index.html"><small>Back To Examples</small></a></li>
-        </ul>
-      </nav>
-
-      <div class="grid">
-        <article>
-          <h4>Inline installation and configured trackers and identity</h4>
-          <small>This page is configured with the easiest installation method, while also letting trackers and identity options to be set  <strong>identity</strong>: session and <strong>trackers</strong>: page, click, and form. <br /> You can install this example, just by adding this onto your web page</small>
-          <pre><code>
-&lt;script type="text/javascript" 
-id="beaconScript"
-async 
-src="beacon.js"
-data-api-root="http://localhost"
-data-trackers="page,click,form"
-data-identity="userAndSession"
-&gt;&lt;/script&gt;
-          </code></pre>
-        </article>
-      </div>
-
-
       <div class="grid">
         <div>
-          <!-- Web Page -->
-          
           <article>
             <h4>Custom Events</h4>
-            <div onclick="window.beacon.track('event', 'test')">Click here for a generic `test` event</div>
+            <div style="border: 1px solid #ddd;" onclick="beacon.track('event', 'test')"><small>Clicking this box to generate a simple event called <pre>beacon.track('event', 'test')</pre></small></div>
           </article>
 
           <article>
@@ -96,6 +56,25 @@ data-identity="userAndSession"
           </small>
         </div>
       </div>
-    </div>
+    </main>
+    <script type="text/javascript">
+      var config = {
+        log: true,
+        apiRoot: 'http://localhost',
+        trackers: ['page', 'form', 'click'],
+      };
+
+      (function () {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '../beacon.js';
+        script.onload = function () {
+          window.beacon.init(config);
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
   </body>
 </html>

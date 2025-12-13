@@ -7,44 +7,7 @@
   </head>
 
   <body>
-    
     <main class="container">
-      <nav>
-        <ul>
-          <li><strong><a href="../index.html">Beacon</a></strong></li>
-        </ul>
-        <ul>
-          <li><a href="../index.html"><small>Back To Examples</small></a></li>
-        </ul>
-      </nav>
-
-      <div class="grid">
-        <article>
-          <h4>Custom Tags</h4>
-          <small>This page is configured using <strong>identity</strong>: noPii and <strong>zero configured trackers</strong>, instead it uses tags directly in the HTML to mimic the same data and experience as <a href="basic-trackers.html">basic-trackers.html</a>. It's worth noting that on these events the trackers will be initialized with the data tagged on the page so that it can provide additional <code>properties</code> into each event.</small>
-          <pre><code>
-&lt;script type="text/javascript" 
-  var config = {
-    log: true,
-    apiRoot: 'http://localhost'
-  };
-
-  (function () {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = '../beacon.js';
-    script.onload = function () {
-      window.beacon.init(config);
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(script, s);
-  })();
-&gt;&lt;/script&gt;
-                                  </code></pre>
-        </article>
-      </div>
-
       <div class="grid">
         <div>
           <article>
@@ -87,14 +50,13 @@
             </form>
           </article>
         </div>
-        <article>
-          <em>Beacon logging results</em>
+        <div>
           <small>
             <ul id="log2Screen-log"></ul>
           </small>
-        </article>
+        </div>
       </div>
-    </div>
+    </main>
     <script type="text/javascript">
       var config = {
         log: true,

@@ -7,45 +7,7 @@
   </head>
 
   <body>
-    
     <main class="container">
-      <nav>
-        <ul>
-          <li><strong><a href="../index.html">Beacon</a></strong></li>
-        </ul>
-        <ul>
-          <li><a href="../index.html"><small>Back To Examples</small></a></li>
-        </ul>
-      </nav>
-
-      <div class="grid">
-        <article>
-          <h4>Basic Trackers</h4>
-          <small>This page is configured with the beacon using <strong>identity</strong>: noPii and <strong>trackers</strong>: page, click, form</small>
-          <pre><code>
-&lt;script type="text/javascript" 
-  var config = {
-    log: true,
-    apiRoot: 'http://localhost',
-    trackers: ['page', 'form', 'click'],
-  };
-
-  (function () {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = '../beacon.js';
-    script.onload = function () {
-      window.beacon.init(config);
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(script, s);
-  })();
-&gt;&lt;/script&gt;
-                      </code></pre>
-        </article>
-      </div>
-
       <div class="grid">
         <div>
           <article>
@@ -88,19 +50,29 @@
             </form>
           </article>
         </div>
-        <article>
-          <em>Beacon logging results</em>
+        <div>
           <small>
             <ul id="log2Screen-log"></ul>
           </small>
-        </article>
+        </div>
       </div>
-    </div>
+    </main>
     <script type="text/javascript">
       var config = {
         log: true,
         apiRoot: 'http://localhost',
         trackers: ['page', 'form', 'click'],
+        identity: "session",
+        settings: {
+          transport: {
+            apiRoute: "/apiroute",
+            method: "queue"
+          },
+          session: {
+            duration: 500,
+            storeName: "beacon-session-name"
+          }
+        }
       };
 
       (function () {
