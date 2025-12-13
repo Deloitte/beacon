@@ -8,35 +8,43 @@ Modern packaging to support the foundation for first-party web analytics
 <p>
 
 <p align="center">
-  <a href="#overview">What is the Beacon?</a> •
+  <a href="#overview">What is Beacon?</a> •
   <a href="#play">Play with the Beacon</a> •
   <a href="#install">Install the Beacon</a> •
   <a href="#contribute">Contribute</a> 
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" />
+  <a href="https://github.com/Deloitte/beacon/releases"><img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" /></a>
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-lines.json" alt="coverage lines" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-functions.json" alt="coverage functions" />
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-statements.json" alt="coverage statements" />
+  <a href="https://www.bestpractices.dev/projects/11608" target="_blank"><img src="https://www.bestpractices.dev/projects/11608/badge"></a>
+  <a href="https://github.com/Deloitte/beacon/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" /></a>
+  <a href="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml" target="_blank"><img src="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml/badge.svg"></a>
+
 </p>
 
 <a id="overview"></a>
 
-## What is "Beacon"?
+## What is Beacon?
 
-In a nutshell, this library provides a modern foundation to create a custom and trusted first-party beacon to be placed on websites and then collect events from users. It has been created to illustrate the patterns of packaging and collecting critical data points that can be expanded by others as needed.
+> In modern web experiences the collection of behavioral analytics is expected, but consumer trust in how that data is collected and shared is at an all time low. 
+
+We've created Beacon to provide a modern foundation to create a trusted foundation for collecting first-party web analytics using a privacy-first and configurable foundation. While there are many solutions in the market for this, it is important to provide education into the patterns of web tracking and create a foundation that allows for flexibility without heavy dependencies.
 
 ![Overview](./docs/img/overview.png)
 
-This repository creates a single minified javascript file called `beacon.js` which you can install into an experience to see what analytics are tracked. You can always find the latest file in the [`GitHub Releases`](https://github.com/Deloitte/beacon/releases) folder, as well as previously released versions.
+### What is in the codebase?
+A stable framework of strongly typed code with highly testable components and minimal dependencies to provide a clear and stable developer experience and ability to extend as needed. 
+
+### What is compiled?
+The output of this library is a single minified javascript file called `beacon.js` which can be installed into any web experience and further configured to collect web analytics events. You get the latest file from [GitHub Pages](https://deloitte.github.io/beacon/beacon.js) or from the [GitHub Releases](https://github.com/Deloitte/beacon/releases) folder.
 
 <a id="play"></a>
 
 ## Play with the beacon
+> Note: This experience has `beacon.js` installed and as an end-user will see log events in your browser, but you will also see that the delivery of these events is not enabled. Therefore - no data is collected from this experience or transported in any way.
 
-If you want to skip ahead and play with it for the simplest web page as an example. Go [here](https://deloitte.github.io/beacon/inline/most-simple.html) to see the `sandbox/inline/most-simple.html` example. Once on this page, you will see logs show up on your screen. You can click on each of the activities to see the detailed logs. As you load the page and interact with you, you will see all of the events that the beacon collects.
+If you want to skip ahead and play with it for the simplest web page as an example. [Click here to see the simplest installation of Beacon on GitHub pages](https://deloitte.github.io/beacon/inline/most-simple.html). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
 
 ![Overview](./docs/img/sandbox.png)
 
