@@ -18,8 +18,8 @@ Modern packaging to support the foundation for first-party web analytics
 <p align="center">
   <a href="https://github.com/Deloitte/beacon/releases"><img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" /></a>
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
-  <a href="https://www.bestpractices.dev/projects/11608" target="_blank"><img src="https://www.bestpractices.dev/projects/11608/badge"></a>
   <a href="https://github.com/Deloitte/beacon/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" /></a>
+  <a href="https://www.bestpractices.dev/projects/11608" target="_blank"><img src="https://www.bestpractices.dev/projects/11608/badge"></a>
   <a href="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml" target="_blank"><img src="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml/badge.svg"></a>
 </p>
 
