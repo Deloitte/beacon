@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.8
+
+### Patch Changes
+
+- [#49](https://github.com/Deloitte/beacon/pull/49) [`8ef01b5`](https://github.com/Deloitte/beacon/commit/8ef01b518b746a5b0220b0db25d4c9716fc22c7e) Thanks [@tjuravich](https://github.com/tjuravich)! - Addition of docusaurus documentation, remove unused util and updated jest comments
+
 ## 0.1.7
 
 ### Patch Changes
