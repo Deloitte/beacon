@@ -20,7 +20,6 @@ export default function SandboxIframe({
   githubPath,
 }: SandboxIframeProps): JSX.Element {
   const sourceUrl = useBaseUrl(src.startsWith('/') ? src : `/${src}`);
-  const viewSourceUrl = sourceUrl;
   
   // Derive GitHub path from src if not provided
   const githubFilePath = githubPath || src.replace(/^\//, '');
