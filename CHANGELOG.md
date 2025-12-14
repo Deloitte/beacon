@@ -1,5 +1,11 @@
 # Deloitte/beacon
 
+## 0.1.9
+
+### Patch Changes
+
+- [#53](https://github.com/Deloitte/beacon/pull/53) [`b1e3bb6`](https://github.com/Deloitte/beacon/commit/b1e3bb6695d382c2cb7a054b450a768051650ebc) Thanks [@tjuravich](https://github.com/tjuravich)! - Completing test coverage for entrypoint and the page tracker
+
 ## 0.1.8
 
 ### Patch Changes
