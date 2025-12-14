@@ -283,7 +283,6 @@ describe('PageTracker', () => {
     await initPromise;
 
     // Clear initial track call
-    const initialCallCount = sendMock.mock.calls.length;
     sendMock.mockClear();
 
     // Dispatch multiple locationchange events
