@@ -20,8 +20,8 @@ export default {
       format: 'iife',
     },
     {
-      // Minified file for actual usage
-      file: `sandbox/beacon.js`,
+      // Minified file for docs examples
+      file: `docs/static/beacon.js`,
       format: 'iife',
     },
   ],

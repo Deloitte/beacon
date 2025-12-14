@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 #### Custom Tags
 
-This page is configured using **identity**: noPii and **zero configured trackers**, instead it uses tags directly in the HTML to mimic the same data and experience as [basic-trackers.html](basic-trackers.html). It's worth noting that on these events the trackers will be initialized with the data tagged on the page so that it can provide additional `properties` into each event.
+This page is configured using **identity**: noPii and **zero configured trackers**, instead it uses tags directly in the HTML to mimic the same data and experience as [basic-trackers](./basic-trackers). It's worth noting that on these events the trackers will be initialized with the data tagged on the page so that it can provide additional `properties` into each event.
 
 ```html
 <script type="text/javascript" 
