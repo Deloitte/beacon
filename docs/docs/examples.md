@@ -1,27 +1,31 @@
 # Examples
 
-This section contains interactive examples demonstrating how to use Beacon in various scenarios.
+This section contains interactive examples demonstrating how Beacon can be installed or configured in various scenarios.
 
-## Installation Methods
+Each of these examples illustrate:
 
-Beacon can be installed using two main methods:
+- Adding the beacon to a web page through [`installation`](/beacon/docs/basics/a-installation), which allows you to adjust configuration** into the `beacon.js` file.
+- Once the beacon is installed, it will start based on your configuration and will collect users, sessions, page views, and events through use [`trackers`](/beacon/docs/basics/c-trackers-and-tags#trackers) and [`tags`](/beacon/docs/basics/c-trackers-and-tags#tags).
+- As events are collected, they currently are logged to the browser, but you could extend to send it to the transporting API of choice.
 
-### Inline Installation
 
-The simplest way to install Beacon is using an inline script tag. This method is perfect for quick integration and requires minimal configuration.
+## Inline Installation
 
-### Snippet Installation
+These examples show you the simplest way to install the beacon. You just need to add a simple script tag on your page
 
-For more advanced configuration options, you can use the snippet installation method, which provides greater control over initialization and settings.
+| Example                        | Description                                                                              | Identity                                                                    | Trackers                                     |
+|--------------------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------|
+| [Out Of The Box](/beacon/docs/examples/inline/out-of-the-box)                 | Start here for the easiest and most privacy conscious option.                            | noPii (default), which means there is no `user` or `session` identification | page (uses page tracker by default if empty) |
+| [With Trackers](/beacon/docs/examples/inline/with-trackers)                   | Using inline tracker, but with added options                                             | session                                                                     | page, click, form                            |
+| [With User Identity](/beacon/docs/examples/inline/with-user-only)             | Using inline tracker, but with added options                                             | user                                                                        | page, click, form                            |
+| [With User And Session Identity](/beacon/docs/examples/inline/with-user-session) | Using inline tracker, but with added options                                             | user & session                                                              | page, click, form                            |
+| [With Custom Events](/beacon/docs/examples/inline/with-custom-events)            | Builds on the previous example by providing markup that enhances page and click trackers | user & session                                                              | page, click, form                            |
 
-## Browse Examples
+## Snippet Installation
 
-Explore the examples below to see Beacon in action:
+These examples allow you to further configure the beacon with more detailed options, which uses a more complex but still easy to use configuration
 
-- **[Most Simple Example](/docs/examples/inline/out-of-the-box)** - The easiest installation method
-- **[With Trackers](/docs/examples/inline/with-trackers)** - Configuring trackers and identity
-- **[Basic Trackers](/docs/examples/snippet/basic-trackers)** - Using snippet installation with basic trackers
-- And more...
-
-Each example is interactive and includes a "View Source" link so you can see exactly how it's implemented.
-
+| Example                    | Description                                                                                         | Identity                                                                    | Trackers          |
+|----------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------|
+| [With Trackers](/beacon/docs/examples/snippet/with-trackers)         | A simple installation with selected trackers.                                       | noPii (default), which means there is no `user` or `session` identification | page, click, form |
+| [Custom Tags](/beacon/docs/examples/snippet/custom-tags) | An illustration of how to use tags to create a similar experience to trackers                       | noPii (default), which means there is no `user` or `session` identification | none              |

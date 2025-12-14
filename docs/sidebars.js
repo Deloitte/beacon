@@ -43,9 +43,8 @@ export default {
       label: 'Snippet Installation',
       collapsed: false,
       items: [
-        'examples/snippet/basic-trackers',
-        'examples/snippet/custom-tags',
-        'examples/snippet/custom-settings',
+        'examples/snippet/with-trackers',
+        'examples/snippet/custom-tags'
       ],
     },
   ],

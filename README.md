@@ -10,7 +10,7 @@ Modern packaging to support the foundation for first-party web analytics
 <p align="center">
   <a href="#overview">What is Beacon?</a> •
   <a href="#play">Play with the Beacon</a> •
-  <a href="#documentations">Documentation</a> •
+  <a href="https://deloitte.github.io/beacon/">Documentation</a> •
   <a href="#install">Install the Beacon</a> •
   <a href="#contribute">Contribute</a> 
 </p>
@@ -21,7 +21,6 @@ Modern packaging to support the foundation for first-party web analytics
   <a href="https://www.bestpractices.dev/projects/11608" target="_blank"><img src="https://www.bestpractices.dev/projects/11608/badge"></a>
   <a href="https://github.com/Deloitte/beacon/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" /></a>
   <a href="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml" target="_blank"><img src="https://github.com/Deloitte/beacon/actions/workflows/main-test.yml/badge.svg"></a>
-
 </p>
 
 <a id="overview"></a>
@@ -45,23 +44,15 @@ The output of this library is a single minified javascript file called `beacon.j
 ## Play with the beacon
 > Note: This experience has `beacon.js` installed and as an end-user will see log events in your browser, but you will also see that the delivery of these events is not enabled. Therefore - no data is collected from this experience or transported in any way.
 
-If you want to go straight to playing with the Beacon, [Click here to an example implementation](https://deloitte.github.io/beacon/inline/most-simple.html). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
+If you want to go straight to playing with the Beacon, [Click here to see an out of the box implementation](https://deloitte.github.io/beacon/docs/examples/inline/out-of-the-box). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
 
 ![Overview](./docs/img/sandbox.png)
 
-## Install the beacon
-
-For those that would like to take the compiled beacon and apply it to your web experience to see how it collects data, you'll want to follow the steps below:
-
-- **A.** To add the beacon to a website, you will need to use an **installation script**, which allows you to pass **configuration** and will load the `beacon.js` file.
-- **B.** Once the beacon is installed, it will start based on your configuration and will collect users, sessions, page views, and events through use **trackers** and **tags**.
-- **C.** As analytics are collected, they currently are logged out, but you could extend to send it to the transporting API of choice.
-
 <a id="install"></a>
 
-### Installation script
+## Install the beacon
 
-> For many examples on how to install the script, including a more complex installation snippet, check out the [detailed playground that shows the installation along with live logs to see how it all works](https://deloitte.github.io/beacon/index.html)
+> For many examples on how to install the script, including a more complex installation snippet, check out the [detailed playground that shows the installation along with live logs to see how it all works](https://deloitte.github.io/beacon/docs/examples)
 
 The simplest way to install the beacon is to use an **inline installation script**. This allows you to place a singular javascript file on your page and it'll take care of the rest.
 
@@ -78,6 +69,6 @@ The simplest way to install the beacon is to use an **inline installation script
 
 <a id="contribute"></a>
 
-## Contributing to the beacon
+## Contribute
 
 If you'd like to contribute, please read our guide to [contributing](./CONTRIBUTING.md)
