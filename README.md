@@ -37,7 +37,7 @@ We've created Beacon to provide a modern foundation to create a trusted foundati
 A stable framework of strongly typed code with highly testable components and minimal dependencies to provide a clear and stable developer experience and ability to extend as needed. 
 
 ### What is compiled?
-The output of this library is a single minified javascript file called `beacon.js` which can be installed into any web experience and further configured to collect web analytics events. You get the latest file from [GitHub Pages](https://deloitte.github.io/beacon/beacon.js) or from the [GitHub Releases](https://github.com/Deloitte/beacon/releases) folder.
+The output of this library is a single minified javascript file called `beacon.js` which currently is 4.6KB (when gzipped) which represents a tiny footprint to install into any web experience and further configured web analytics events. You get the latest file from [GitHub Pages](https://deloitte.github.io/beacon/beacon.js) or from the [GitHub Releases](https://github.com/Deloitte/beacon/releases) folder.
 
 <a id="play"></a>
 
