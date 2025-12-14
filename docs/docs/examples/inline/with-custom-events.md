@@ -33,7 +33,7 @@ Or for passing more complex information, you can use the following:
 
 ## Interactive Example
 
-import SandboxIframe from '@site/src/components/SandboxIframe';
+import SandboxIframe from '@site/src/components/SandboxIframe/SandboxIframe';
 
 <SandboxIframe
   src="/examples/inline/with-custom-events.html"

@@ -33,7 +33,7 @@ This page is configured with the beacon using **identity**: noPii and **trackers
 
 ## Interactive Example
 
-import SandboxIframe from '@site/src/components/SandboxIframe';
+import SandboxIframe from '@site/src/components/SandboxIframe/SandboxIframe';
 
 <SandboxIframe
   src="/examples/snippet/custom-settings.html"

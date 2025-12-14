@@ -26,6 +26,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/Deloitte/beacon/tree/main/docs/',
+          sidebarCollapsed: false,
         },
         blog: false,
         theme: {
@@ -59,33 +60,13 @@ const config = {
         },
       ],
     },
+    sidebar: {
+      autoCollapseCategories: false,
+    },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Examples',
-              to: '/docs/examples',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Deloitte/beacon',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Deloitte. Built with Docusaurus.`,
+      links: [],
+      copyright: `This documentation site is built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

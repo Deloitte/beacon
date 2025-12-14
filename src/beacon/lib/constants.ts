@@ -1,6 +1,3 @@
-export const DEV_AUTO_TRACK_VISUAL_STYLE =
-  'border:1px solid red;animation: autotrack-indicator 2s infinite;';
-
 export const PAGE_AUTOTRACK_DELAY = 600;
 export const PAGE_META_PREFERENCE_EVENTNAME = ['title'];
 export const PAGE_META_PREFERENCE_ENTITY = ['entity'];

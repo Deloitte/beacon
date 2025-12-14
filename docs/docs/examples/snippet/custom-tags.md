@@ -32,7 +32,7 @@ This page is configured using **identity**: noPii and **zero configured trackers
 
 ## Interactive Example
 
-import SandboxIframe from '@site/src/components/SandboxIframe';
+import SandboxIframe from '@site/src/components/SandboxIframe/SandboxIframe';
 
 <SandboxIframe
   src="/examples/snippet/custom-tags.html"

@@ -23,7 +23,7 @@ data-identity="user"
 
 ## Interactive Example
 
-import SandboxIframe from '@site/src/components/SandboxIframe';
+import SandboxIframe from '@site/src/components/SandboxIframe/SandboxIframe';
 
 <SandboxIframe
   src="/examples/inline/with-user-only.html"

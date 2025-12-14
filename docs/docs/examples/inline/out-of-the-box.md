@@ -7,9 +7,9 @@ hide_table_of_contents: true
 
 #### Out Of The Box
 
-This page is configured with the most basic "out of the box" installation. It will default using the **identity**: noPii and **trackers**: page, but you can also still call custom tags as needed.
+This example is the most basic "out of the box" installation of `beacon.js` on a simple HTML page. By default this installation will use **identity**: noPii and **trackers**: page.
 
-You can install this example, just by adding this onto your web page
+This example is configure by placing this code onto a page:
 
 ```html
 <script type="text/javascript" 
@@ -21,8 +21,9 @@ data-api-root="http://localhost"
 ```
 
 ## Interactive Example
+> Below is an illustrative example of how beacon collects data. Instead of sending it to an API, the data that is display is shown inside of the page itself.
 
-import SandboxIframe from '@site/src/components/SandboxIframe';
+import SandboxIframe from '@site/src/components/SandboxIframe/SandboxIframe';
 
 <SandboxIframe
   src="/examples/inline/out-of-the-box.html"

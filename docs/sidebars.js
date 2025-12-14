@@ -2,8 +2,26 @@ export default {
   documentationSidebar: [
     {
       type: 'doc',
-      id: 'intro',
-      label: 'Introduction',
+      id: 'overview',
+      label: 'Overview',
+    },
+    {
+      type: 'category',
+      label: 'Basics',
+      collapsed: false,
+      items: [
+        'basics/a-installation',
+        'basics/b-identify-users',
+        'basics/c-trackers-and-tags',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced',
+      collapsed: false,
+      items: [
+        'advanced/data-collection',
+      ],
     },
   ],
   examplesSidebar: [
@@ -11,6 +29,7 @@ export default {
     {
       type: 'category',
       label: 'Inline Installation',
+      collapsed: false,
       items: [
         'examples/inline/out-of-the-box',
         'examples/inline/with-trackers',
@@ -22,6 +41,7 @@ export default {
     {
       type: 'category',
       label: 'Snippet Installation',
+      collapsed: false,
       items: [
         'examples/snippet/basic-trackers',
         'examples/snippet/custom-tags',
