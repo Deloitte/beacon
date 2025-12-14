@@ -68,7 +68,6 @@ describe('Entrypoint', () => {
   it('does not initialize when beaconScript element does not exist', async () => {
     mockGetElementById.mockReturnValue(null);
 
-    const initSpy = jest.fn();
     
     await import('../entrypoint');
 
