@@ -19,7 +19,7 @@ When tracking behavior across any property, you will want to use [**trackers**](
 
 ### Applying the configuration
 
-As shown in [installation](/docs/web-tracker/basics/a-installation), you can set the identity by using the `data-trackers` field.
+As shown in [installation](/docs/basics/a-installation), you can set the identity by using the `data-trackers` field.
 
 ```javascript
 <script

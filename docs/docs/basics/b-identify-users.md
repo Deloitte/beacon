@@ -11,7 +11,7 @@ Identifying users is an important topic to be clear and transparent to your end 
 
 ## Identity
 
-We look at identity based on the [strategy](#strategy) that you will want to use to **store** and **persist** a user in the borwser so that we can connect their usage as a **user** over a variety of **sessions**.
+We look at identity based on the [strategy](#identity-strategies) that you will want to use to **store** and **persist** a user in the borwser so that we can connect their usage as a **user** over a variety of **sessions**.
 
 The beacon is setup to be flexible based on your needs by allowing you to set an identity strategy to make sure that its working based on your strategy. By default the beacon is setup in `noPii` mode, whic doesn't leverage any cookies or identifiable attributes and relies upon the proper bucketing at the API level. This repository currently only illustrates the front-end collection, but we'll provide a more detailed foundational API shortly. In the process of determinating an identity strategy, there are tradeoffs in the quality of the data which are important to understand:
 
@@ -26,7 +26,7 @@ The beacon is setup to be flexible based on your needs by allowing you to set an
 
 ### Applying the configuration
 
-As shown in [installation](/docs/web-tracker/basics/a-installation), you can set the identity by using the `data-identity` field.
+As shown in [installation](/docs/basics/a-installation), you can set the identity by using the `data-identity` field.
 
 ```javascript
 <script
