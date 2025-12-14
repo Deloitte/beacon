@@ -44,9 +44,9 @@ The output of this library is a single minified javascript file called `beacon.j
 ## Play with the beacon
 > Note: This experience has `beacon.js` installed and as an end-user will see log events in your browser, but you will also see that the delivery of these events is not enabled. Therefore - no data is collected from this experience or transported in any way.
 
-If you want to go straight to playing with the Beacon, [Click here to see an out of the box implementation](https://deloitte.github.io/beacon/docs/examples/inline/out-of-the-box). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
+If you want to go straight to playing with the Beacon, [Click here to see an out of the box implementation](https://deloitte.github.io/beacon/docs/examples/inline/out-of-the-box). This page is an embedded iframe with a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
 
-![Overview](./docs/img/sandbox.png)
+![Overview](./docs/img/examples.png)
 
 <a id="install"></a>
 
