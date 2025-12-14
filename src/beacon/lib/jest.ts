@@ -85,7 +85,7 @@ export function setupTrackerTestCase(
 
   // console.log(tracker);
 
-  // // Mock the trackActivity event like we do on window.blueprint in the beacon.ts object
+  // // Mock the trackActivity event like we do on window.beacon in the beacon.ts object
   // window.beacon = {
   //   call: jest.fn().mockImplementation(),
   //   track: jest.fn().mockImplementation(core.track),

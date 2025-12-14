@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="pico.min.css" />
+    <script type="text/javascript" src="log2screen.js" ></script>
+  </head>
+
+  <body>
+    
+    <main class="container">
+      <nav>
+        <ul>
+          <li><strong><a href="index.html">Beacon</a></strong></li>
+        </ul>
+        <ul>
+          <li>
+            <a href="https://github.com/Deloitte/beacon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="grid">
+        <div>
+          <article>
+            <h3>The simplest method of installation (inline script)</h3>
+            <p>These examples show you the simplest way to install the beacon. You just need to add a simple script tag on your page</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Example</th>
+                  <th>Description</th>
+                  <th>Identity</th>
+                  <th>Trackers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="inline/most-simple.html">The simplest installation</a></td>
+                  <td>
+                    Start here for the easiest and most privacy conscious option.
+                  </td>
+                  <td><code>noPii</code> (default), which means there is no `user` or `session` identification</td>
+                  <td><code>page</code> (uses page tracker by default if empty)</td>
+                </tr>
+                <tr>
+                  <td><a href="inline/with-trackers.html">Configuring trackers and identity</a></td>
+                  <td>
+                    Using inline tracker, but with added options
+                  </td>
+                  <td><code>session</code></td>
+                  <td><code>page</code>, <code>click</code>, <code>form</code></td>
+                </tr>
+                <tr>
+                  <td><a href="inline/with-user-only.html">With all trackers and user identity</a></td>
+                  <td>
+                    Using inline tracker, but with added options
+                  </td>
+                  <td><code>user</code></td>
+                  <td><code>page</code>, <code>click</code>, <code>form</code></td>
+                </tr>
+                <tr>
+                  <td><a href="inline/with-user-session.html">With all trackers and user, session identity</a></td>
+                  <td>
+                    Using inline tracker, but with added options
+                  </td>
+                  <td><code>user & session</code></td>
+                  <td><code>page</code>, <code>click</code>, <code>form</code></td>
+                </tr>
+                <tr>
+                  <td><a href="inline/with-custom-events.html">With custom page and click events</a></td>
+                  <td>
+                    Builds on the previous example by providing markup that enhances page and click trackers
+                  </td>
+                  <td><code>user & session</code></td>
+                  <td><code>page</code>, <code>click</code>, <code>form</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <article>
+
+            <h3>Advanced configuration (using snippet installation)</h3>
+            <p>These examples allow you to further configure the beacon with more detailed options, which uses a more complex but still easy to use configuration</p>
+    
+            <table>
+              <thead>
+                <tr>
+                  <th>Example</th>
+                  <th>Description</th>
+                  <th>Identity</th>
+                  <th>Trackers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="snippet/basic-trackers.html">Basic Installation</a></td>
+                  <td>
+                    The simplest, most common, and most privacy conscious option.
+                  </td>
+                  <td><code>noPii</code> (default), which means there is no `user` or `session` identification</td>
+                  <td><code>page</code>, <code>click</code>, <code>form</code></td>
+                </tr>
+                <tr>
+                  <td><a href="snippet/custom-tags.html">No Trackers, But with Tags</a></td>
+                  <td>
+                    An illustration of how to use tags to create a similar experience to trackers 
+                  </td>
+                  <td><code>noPii</code> (default), which means there is no `user` or `session` identification</td>
+                  <td><code>none</code></td>
+                </tr>
+                <tr>
+                  <td><a href="snippet/custom-settings.html">Custom Settings</a></td>
+                  <td>
+                    In some cases, you might need to override the custom settings of the beacon, this is how you do it. 
+                  </td>
+                  <td><code>noPii</code> (default), which means there is no `user` or `session` identification</td>
+                  <td><code>none</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

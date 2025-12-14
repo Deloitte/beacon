@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="../pico.min.css" />
+    <script type="text/javascript" src="../log2screen.js" ></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="grid">
+        <div>
+          <article>
+            <h4>Custom Events</h4>
+            <div style="border: 1px solid #ddd;" onclick="beacon.track('event','test');"><small>Clicking this box to generate a simple event called <pre>beacon.track('event', 'test')</pre></small></div>
+          </article>
+
+          <article>
+            <h4>Click Tracker</h4>
+            <a href="#">Link To Google</a>
+            <button id="clickMe">Test Button</button>
+          </article>
+
+          <article>
+            <h4>Form Tracker</h4>
+            <form
+              title=""
+              action="/EmailSubscription"
+              class="validate"
+              id="EmailOffersForm"
+              onsubmit="event.preventDefault();"
+            >
+              <fieldset class="grid">
+                <input
+                  type="text"
+                  name="first name"
+                  id="first-name-input"
+                  placeholder="Enter your first name"
+                  title="enter first name"
+                />
+                <input
+                  type="text"
+                  name="last name"
+                  id="last-name-input"
+                  placeholder="Enter your last name"
+                  title="enter last name"
+                />
+                <button type="submit">Test Submit</button>
+              </fieldset>
+            </form>
+          </article>
+        </div>
+        <div>
+          <small>
+            <ul id="log2Screen-log"></ul>
+          </small>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+      var config = {
+        log: true,
+        apiRoot: 'http://localhost',
+      };
+
+      function initializeBeacon() {
+        function testFunction(event) {
+          var element = event.target;
+          console.log(element);
+          console.log(getElementNameByTagName(element.nodeName));
+        }
+
+        function getElementNameByTagName(tagName) {
+          if (tagName === 'A') {
+            return 'Link';
+          } else if (tagName === 'BUTTON') {
+            return 'Button';
+          } else if (tagName === 'DIV') {
+            return 'Div';
+          } else if (tagName === 'FORM') {
+            return 'Form';
+          } else if (tagName === 'INPUT') {
+            return 'Input';
+          } else {
+            return 'Element';
+          }
+        }
+
+        window.addEventListener('click', testFunction, false);
+
+        // // Replicate the Page Tracker experience
+        // // Will delay 1 second to just not block our page overall
+        // beacon.trackCurrentPage();
+
+        // // Replicate the Click Tracker experience for links
+        // var linksOnPage = document.getElementsByTagName('a');
+        // for(var i=0; i < linksOnPage.length; i++){
+        //   linksOnPage[i].addEventListener('click', beacon.trackLinkClick, false)
+        // }
+
+        // // Replicate the Click Tracker experience for buttons
+        // var buttonsOnPage = document.getElementsByTagName('button');
+        // for(var i=0; i < buttonsOnPage.length; i++){
+        //   buttonsOnPage[i].addEventListener('click', beacon.trackButtonClick, false)
+        // }
+      }
+
+      (function () {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '../../beacon.js';
+        script.onload = function () {
+          beacon.init(config);
+
+          setTimeout(initializeBeacon(), 1000);
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+
+      // beacon.init(config);
+    </script>
+  </body>
+</html>

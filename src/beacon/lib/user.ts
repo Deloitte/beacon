@@ -36,7 +36,7 @@ export default class UserController {
   }
 
   private async seedAnonymous(storage: LocalStorage) {
-    // Seed identity (we'll use an anonymous blueprint record as the source)
+    // Seed identity (we'll use an anonymous beacon record as the source)
     this.logger.debug('Seeding anonymous identity');
 
     // Create a unique UUID

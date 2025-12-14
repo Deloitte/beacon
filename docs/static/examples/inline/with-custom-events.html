@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ArticlePage</title>
+    <meta name="entity" content="Article" />
+    <meta name="entity-id" content="12345" />
+    <meta name="entity-props-name" content="My Article" />
+    <link rel="stylesheet" href="../pico.min.css" />
+    <script type="text/javascript" src="../log2screen.js" ></script>
+    <script
+      type="text/javascript"
+      id="beaconScript"
+      async
+      src="../../beacon.js"
+      data-log="true"
+      data-api-root="http://localhost"
+      data-trackers="page,click,form"
+      data-identity="userAndSession"
+    ></script>
+  </head>
+
+  <!-- data-api-root="http://localhost" -->
+
+  <body>
+    <main class="container">
+      <div class="grid">
+        <div>
+          <!-- Web Page -->
+
+          <article>
+            <h4>Click Tracker</h4>
+            <a href="#" data-event="ClickedGoogleLink">Link To Google</a>
+            <button id="likeArticle" data-event="ArticleLiked" data-entity="Article" data-entity-id="12345">Test Button (to trigger Article Liked event)</button>
+          </article>
+        </div>
+        <div>
+          <small>
+            <ul id="log2Screen-log"></ul>
+          </small>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

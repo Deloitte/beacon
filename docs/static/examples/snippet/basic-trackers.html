@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="../pico.min.css" />
+    <script type="text/javascript" src="../log2screen.js" ></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="grid">
+        <div>
+          <article>
+            <h4>Custom Events</h4>
+            <div style="border: 1px solid #ddd;" onclick="beacon.track('event', 'test')"><small>Clicking this box to generate a simple event called <pre>beacon.track('event', 'test')</pre></small></div>
+          </article>
+
+          <article>
+            <h4>Click Tracker</h4>
+            <a href="#">Link To Google</a>
+            <button id="clickMe">Test Button</button>
+          </article>
+
+          <article>
+            <h4>Form Tracker</h4>
+            <form
+              title=""
+              action="/EmailSubscription"
+              class="validate"
+              id="EmailOffersForm"
+              onsubmit="event.preventDefault();"
+            >
+              <fieldset class="grid">
+                <input
+                  type="text"
+                  name="first name"
+                  id="first-name-input"
+                  placeholder="Enter your first name"
+                  title="enter first name"
+                />
+                <input
+                  type="text"
+                  name="last name"
+                  id="last-name-input"
+                  placeholder="Enter your last name"
+                  title="enter last name"
+                />
+                <button type="submit">Test Submit</button>
+              </fieldset>
+            </form>
+          </article>
+        </div>
+        <div>
+          <small>
+            <ul id="log2Screen-log"></ul>
+          </small>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+      var config = {
+        log: true,
+        apiRoot: 'http://localhost',
+        trackers: ['page', 'form', 'click'],
+      };
+
+      (function () {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '../../beacon.js';
+        script.onload = function () {
+          window.beacon.init(config);
+        };
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+  </body>
+</html>
