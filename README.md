@@ -10,6 +10,7 @@ Modern packaging to support the foundation for first-party web analytics
 <p align="center">
   <a href="#overview">What is Beacon?</a> •
   <a href="#play">Play with the Beacon</a> •
+  <a href="#documentations">Documentation</a> •
   <a href="#install">Install the Beacon</a> •
   <a href="#contribute">Contribute</a> 
 </p>
@@ -44,7 +45,7 @@ The output of this library is a single minified javascript file called `beacon.j
 ## Play with the beacon
 > Note: This experience has `beacon.js` installed and as an end-user will see log events in your browser, but you will also see that the delivery of these events is not enabled. Therefore - no data is collected from this experience or transported in any way.
 
-If you want to skip ahead and play with it for the simplest web page as an example. [Click here to see the simplest installation of Beacon on GitHub pages](https://deloitte.github.io/beacon/inline/most-simple.html). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
+If you want to go straight to playing with the Beacon, [Click here to an example implementation](https://deloitte.github.io/beacon/inline/most-simple.html). This page is a vanilla HTML page that has `beacon.js` installed as well as a simple log script to display the logs directly to you in the browser. You can click on elements on the page to see how the data is collected. As you load the page and interact with you, you will see all of the events that the beacon collects.
 
 ![Overview](./docs/img/sandbox.png)
 
