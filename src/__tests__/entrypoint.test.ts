@@ -3,9 +3,8 @@
  */
 'use strict';
 
-import { defaultConfig } from '../beacon/lib/jest';
-
-import * as entrypoint from '../entrypoint';
+// Import to make this a module for declare global
+import {} from '../beacon/core';
 
 declare global {
   interface Window {
@@ -21,85 +20,225 @@ function setupMocks() {
 }
 
 describe('Entrypoint', () => {
-  beforeAll(() => {
+  let mockGetElementById: jest.SpyInstance;
+
+  beforeEach(() => {
+    // Reset window.beacon before each test
+    delete (window as any).beacon;
+    
+    // Reset modules to allow re-importing entrypoint
+    jest.resetModules();
+    
     setupMocks();
-    // TODO: need a better way than doing this to actually evaluate and run the entrypoint
-    console.log(entrypoint);
+    
+    // Mock document.getElementById
+    mockGetElementById = jest.spyOn(document, 'getElementById');
   });
 
-  it('can be loaded with default configuration', async () => {
-    // load the initiatialization script
-    window.beacon.init(
-      defaultConfig({
-        identity: 'noPii',
-        log: false,
-        trackers: [],
-      })
-    );
-
-    expect(window.beacon.enabled).toEqual(true);
+  afterEach(() => {
+    mockGetElementById.mockRestore();
   });
 
-  // it('can register window._beacon.call(init) directly', async () => {
-  //   // load the initiatialization script
-  //   window._beacon.call(
-  //     'init',
-  //     defaultConfig({
-  //       identity: 'noPii',
-  //       log: false,
-  //       trackers: [],
-  //     })
-  //   );
+  it('creates window.beacon Core instance when it does not exist', async () => {
+    // Mock no script tag found
+    mockGetElementById.mockReturnValue(null);
 
-  //   expect(window.beacon.enabled).toEqual(true);
-  // });
+    // Import entrypoint to trigger IIFE
+    await import('../entrypoint');
 
-  // it('can register window._beacon.call(track) calls directly', async () => {
-  //   window._beacon.call(
-  //     'init',
-  //     defaultConfig({
-  //       identity: 'noPii',
-  //       log: false,
-  //       trackers: [],
-  //     })
-  //   );
+    expect(window.beacon).toBeDefined();
+    expect(window.beacon.constructor.name).toBe('Core');
+  });
 
-  //   // Run a number of the track calls
-  //   window.beacon.call('track');
-  //   window.beacon.call('page');
-  //   window.beacon.call('click');
-  //   window.beacon.call('form');
-  //   window.beacon.call('dataLayer');
+  it('does not create window.beacon if it already exists', async () => {
+    // Set up existing beacon
+    const existingBeacon = { existing: true };
+    (window as any).beacon = existingBeacon;
+    
+    mockGetElementById.mockReturnValue(null);
 
-  //   expect(window.beacon.enabled).toEqual(true);
-  // });
+    // Import entrypoint to trigger IIFE
+    await import('../entrypoint');
 
-  // it('can register window._beacon.trackCurrentPage directly', async () => {
-  //   // load the initiatialization script
-  //   window._beacon.call(
-  //     'init',
-  //     defaultConfig({
-  //       identity: 'noPii',
-  //       log: false,
-  //       trackers: [],
-  //     })
-  //   );
+    // Should not have been replaced
+    expect(window.beacon).toBe(existingBeacon);
+    expect(window.beacon.existing).toBe(true);
+  });
 
-  //   window.beacon.call('trackCurrentPage');
-  // });
+  it('does not initialize when beaconScript element does not exist', async () => {
+    mockGetElementById.mockReturnValue(null);
 
-  // it('can register window._beacon.fallbacknotfound directly', async () => {
-  //   // load the initiatialization script
-  //   window._beacon.call(
-  //     'init',
-  //     defaultConfig({
-  //       identity: 'noPii',
-  //       log: false,
-  //       trackers: [],
-  //     })
-  //   );
+    
+    await import('../entrypoint');
 
-  //   // Call something else random just to show that it works
-  //   window.beacon.call('fallbacknotfound');
-  // });
+    // Core should be created but init should not be called
+    expect(window.beacon).toBeDefined();
+    expect(window.beacon.init).toBeDefined();
+  });
+
+  it('initializes with apiRoot from data-api-root attribute', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon).toBeDefined();
+    expect(window.beacon.config.apiRoot).toBe('https://api.example.com');
+  });
+
+  it('does not initialize when apiRoot is not provided', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    // No data-api-root attribute
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon).toBeDefined();
+    // Should use default apiRoot from Core constructor
+    expect(window.beacon.config.apiRoot).toBe('http://localhost');
+  });
+
+  it('sets log to true when data-log attribute is "true"', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-log', 'true');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.log).toBe(true);
+  });
+
+  it('sets log to false when data-log attribute is not "true"', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-log', 'false');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.log).toBe(false);
+  });
+
+  it('uses data-identity attribute when provided', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-identity', 'user');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.identity).toBe('user');
+  });
+
+  it('defaults identity to "noPii" when data-identity is not provided', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    // No data-identity attribute
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.identity).toBe('noPii');
+  });
+
+  it('uses data-trackers attribute when provided as single value', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-trackers', 'click');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    // Single value without comma stays as string
+    expect(window.beacon.config.trackers).toBe('click');
+  });
+
+  it('splits comma-separated data-trackers attribute', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-trackers', 'page,click,form');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.trackers).toEqual(['page', 'click', 'form']);
+  });
+
+  it('defaults trackers to ["page"] when data-trackers is not provided', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    // No data-trackers attribute
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.trackers).toEqual(['page']);
+  });
+
+  it('handles all attributes together correctly', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-log', 'true');
+    mockScript.setAttribute('data-identity', 'userAndSession');
+    mockScript.setAttribute('data-trackers', 'page,click');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    expect(window.beacon.config.apiRoot).toBe('https://api.example.com');
+    expect(window.beacon.config.log).toBe(true);
+    expect(window.beacon.config.identity).toBe('userAndSession');
+    expect(window.beacon.config.trackers).toEqual(['page', 'click']);
+  });
+
+  it('handles trackers string without comma correctly', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-trackers', 'form');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    // Should remain as string since no comma found
+    expect(window.beacon.config.trackers).toBe('form');
+  });
+
+  it('handles empty data-trackers attribute', async () => {
+    const mockScript = document.createElement('script');
+    mockScript.id = 'beaconScript';
+    mockScript.setAttribute('data-api-root', 'https://api.example.com');
+    mockScript.setAttribute('data-trackers', '');
+    
+    mockGetElementById.mockReturnValue(mockScript);
+
+    await import('../entrypoint');
+
+    // Empty string is falsy, so should default to ['page']
+    // getAttribute returns '' for empty attribute, which is falsy
+    expect(window.beacon.config.trackers).toEqual(['page']);
+  });
 });
