@@ -6,7 +6,7 @@ Pull requests, bug reports, and all other forms of contribution are welcomed and
 
 - Fork this repository and create a feature branch from `main` (for example, `feature/my-change`).
 - Install dependencies with `npm install`.
-- Make your changes in small, focused commits. Use `git commit -s` to include a "Signed-off-by" line in your commit messages.
+- Make your changes in small, focused commits. All commits should include a "Signed-off-by" line (this can be configured automatically—see the Signing Commits section below).
 - Run the test suite locally with `npm test` before opening a pull request.
 
 If you are unsure about an approach, feel free to open a draft pull request to get feedback early.
@@ -53,8 +53,11 @@ This repository requires all commits to be signed. We use SSH key signing (avail
    git config --local commit.gpgsign true
    git config --local gpg.format ssh
    git config --local user.signingkey ~/.ssh/your-key-name.pub
+   git config --local commit.autoSignoff true
    ```
    Replace `your-key-name.pub` with the actual name of your SSH public key file.
+   
+   The `commit.autoSignoff true` setting automatically adds a "Signed-off-by" line to all commits, so you don't need to remember to use `-s` each time.
 
 3. **Add your SSH key to GitHub** (required for GitHub to verify your signatures):
    - Copy your public key: `cat ~/.ssh/your-key-name.pub` (or open the `.pub` file)
@@ -71,13 +74,13 @@ This repository requires all commits to be signed. We use SSH key signing (avail
 
 5. **Test it**: Make a commit and verify it's signed:
    ```bash
-   git commit -s -m "Test commit"
+   git commit -m "Test commit"
    git log --show-signature -1
    ```
 
-Your commits will now be automatically signed with your SSH key for this repository only. Once you've added your SSH key to GitHub as a signing key, GitHub will verify and display your signatures on commits and pull requests.
+Your commits will now be automatically signed with your SSH key and include a "Signed-off-by" line for this repository only. Once you've added your SSH key to GitHub as a signing key, GitHub will verify and display your signatures on commits and pull requests.
 
-**Note**: Always use `git commit -s` (or `git commit --signoff`) when making commits. The `-s` flag adds a "Signed-off-by" line to your commit message, which certifies that you have the right to submit the work under the project's license.
+**Note**: With `commit.autoSignoff true` configured, you don't need to use the `-s` flag manually. The "Signed-off-by" line will be automatically added to certify that you have the right to submit the work under the project's license.
 
 ## Pull Request Guidelines
 

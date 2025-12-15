@@ -16,6 +16,7 @@ Modern packaging to support the foundation for first-party web analytics
 </p>
 
 <p align="center">
+  <a href="https://deloitte.github.io/beacon/beacon.js" target="_blank"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FDeloitte%2Fbeacon%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.version&prefix=v&logo=javascript&label=beacon.js" alt="beacon file" /></a>
   <a href="https://github.com/Deloitte/beacon/releases"><img src="https://img.shields.io/github/package-json/v/Deloitte/beacon" alt="package version" /></a>
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deloitte/beacon/badges/.badges/coverage-total.json" alt="coverage" />
   <a href="https://github.com/Deloitte/beacon/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" /></a>
