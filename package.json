@@ -56,7 +56,7 @@
     "uglify-js": "^3.17.4",
     "unique-color": "^0.1.0",
     "@types/node": "^25.0.3",
-    "undici-types": "^7.16.0"
+    "undici-types": "^7.18.0"
   },
   "files": [
     "dist/**/*"
