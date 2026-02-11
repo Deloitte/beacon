@@ -1,3 +1,6 @@
+// Copyright 2025-2026 Deloitte Development LLC
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/
+
 export function mapToKeyValue(map: any) {
   const obj = Object.create(null);
   for (const [k, v] of map) {
