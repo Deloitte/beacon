@@ -70,6 +70,10 @@ The simplest way to install the beacon is to use an **inline installation script
 
 <a id="contribute"></a>
 
+## License
+
+Beacon is made available by Deloitte Consulting LLP under the terms of the Mozilla Public License 2.0. To the extent any intellectual property provided in connection with Beacon constitutes inventory within the meaning of section 471 of the Internal Revenue Code, such intellectual property is licensed to licensees by Deloitte Consulting LLP  as agent for its product company subsidiary on the terms set forth above.
+
 ## Contribute
 
 If you'd like to contribute, please read our guide to [contributing](./CONTRIBUTING.md)
