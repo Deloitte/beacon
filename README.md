@@ -30,8 +30,12 @@ Modern packaging to support the foundation for first-party web analytics
 
 > In modern web experiences the collection of behavioral analytics is expected, but consumer trust in how that data is collected and shared is at an all time low. 
 
-We've created Beacon to provide a modern foundation to create a trusted foundation for collecting first-party web analytics using a privacy-first and configurable foundation. While there are many solutions in the market for this, it is important to provide education into the patterns of web tracking and create a foundation that allows for flexibility without heavy dependencies.
+Beacon is an open-source, privacy-first framework for collecting first-party web analytics. It provides a configurable, lightweight structure for capturing and organizing user interaction events without heavy third-party dependencies.
 
+Beacon was created to help developers understand the architectural patterns behind web tracking and telemetry systems. While many commercial analytics solutions exist, Beacon is designed as an educational and foundational tool to demonstrate how event collection works, how data can be structured consistently, and how organizations can implement their own telemetry approaches with flexibility and transparency.
+ 
+Rather than serving as a turnkey analytics platform, Beacon offers a modern, modular starting point for teams that want greater visibility into how web interaction data is defined, captured, and transmitted.
+ 
 ![Overview](./docs/img/overview.png)
 
 ### What is in the codebase?
