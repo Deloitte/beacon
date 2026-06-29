@@ -26,7 +26,7 @@ class Core {
 
   constructor(window: Window & typeof globalThis, queue: Array<any> = []) {
     self = this;
-    // By setting loaded as false, we make sure we wait until this function is full loaded before performing next steps
+    // By setting loaded as false, we make sure we wait until this function is fully loaded before performing next steps
     this.loaded = false;
     this.enabled = false;
     this.window = window;
@@ -71,7 +71,7 @@ class Core {
           break;
         default:
           this.logger!.warn(
-            `Tracker ${trackerName} doesnt exist and cannot be registered`
+            `Tracker ${trackerName} doesn't exist and cannot be registered`
           );
           break;
       }

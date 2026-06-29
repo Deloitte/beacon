@@ -57,10 +57,10 @@ export default class ClickTracker extends BaseTracker {
         );
 
         if (elementMeta.dontTrack) {
-          // If we shouldn't track, lets exit out of here
+          // If we shouldn't track, let's exit out of here
           return false;
         } else {
-          // Get general page metadaata
+          // Get general page metadata
           const pageMeta: any = {
             pageName: getPageName(this.core, document),
             entity: getPageEntityProperties(this.core, document),
@@ -160,7 +160,7 @@ export default class ClickTracker extends BaseTracker {
     // For storage of entity information if we actually have it
     const entity: any = {};
 
-    // Get the element type in as well (e.g. if its a DIV, this will be 'div')
+    // Get the element type in as well (e.g. if it's a DIV, this will be 'div')
     properties['element'] = element.tagName.toLowerCase();
 
     if (element.hasAttributes()) {
@@ -196,7 +196,7 @@ export default class ClickTracker extends BaseTracker {
       // If we see a password field, let's make sure that we aren't capturing the value
       if (properties['type'] === 'password') {
         if (properties['value']) {
-          // Delete the value attribute (so we dont see a password)
+          // Delete the value attribute (so we don't see a password)
           delete properties['value'];
         }
       }
@@ -212,7 +212,7 @@ export default class ClickTracker extends BaseTracker {
 
     // Get the XPath of the element
     try {
-      // This is experimental, so we dont want to crash our tracking based on us not finding xpaths or positions
+      // This is experimental, so we don't want to crash our tracking based on us not finding xpaths or positions
       const { xpath, location } = this.getXPathForElement(element, event);
 
       properties['xpath'] = xpath;

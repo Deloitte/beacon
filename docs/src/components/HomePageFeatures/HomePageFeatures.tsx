@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     Svg: "/img/home/control.svg",
     description: (
       <>
-        Its critical to understand how to control the granularity of the data that you track and how that is processed from the point of collection. <br /> <Link to="/docs/basics/a-installation">Learn how to configure this here</Link>
+        It's critical to understand how to control the granularity of the data that you track and how that is processed from the point of collection. <br /> <Link to="/docs/basics/a-installation">Learn how to configure this here</Link>
       </>
     ),
   },
