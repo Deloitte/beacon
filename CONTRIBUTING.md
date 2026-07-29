@@ -1,7 +1,5 @@
 # Contributing to Beacon
 
-Pull requests, bug reports, and all other forms of contribution are welcomed and highly encouraged. Thank you for helping improve Beacon!
-
 ## How to Get Started
 
 - Fork this repository and create a feature branch from `main` (for example, `feature/my-change`).
@@ -91,4 +89,4 @@ Before opening a pull request, please:
 - Reference any related issues (for example, `Closes #123`) when appropriate.
 - Call out any **breaking changes** or migration steps required for existing users.
 
-Once submitted, maintainers may request changes or clarifications. Collaborating on this feedback is a normal part of the review process and helps keep Beacon stable and reliable.
+Once submitted, maintainers may request changes or clarifications. Feedback is a normal part of the review process and helps keep Beacon stable and reliable.
