@@ -15,7 +15,7 @@ export default class FormTracker extends BaseTracker {
     super(parent, core, 'FormTracker');
   }
 
-  // When the page loads all form tags on the page will be registered for a submit even
+  // When the page loads all form tags on the page will be registered for a submit event
   public async init() {
     // For each link, register for click event
 
@@ -43,7 +43,7 @@ export default class FormTracker extends BaseTracker {
       const element = event.target;
 
       if (element) {
-        // Get general page metadaata
+        // Get general page metadata
         const pageMeta = {
           pageName: getPageName(this.core, document),
           entity: getPageEntityProperties(this.core, document),

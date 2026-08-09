@@ -76,7 +76,7 @@ export function getPageEntityProperties(core: Core, document: any) {
     // 2. Get the entity ID (e.g. 12345)
     entityId = getPreferredMeta(core.config.settings.page.entityId, document);
 
-    // 3. Get any preffered entity properties (e.g. title = "this is the title")
+    // 3. Get any preferred entity properties (e.g. title = "this is the title")
     entityProperties = getPreferredMetaList(
       core.config.settings.page.entityProps,
       document
